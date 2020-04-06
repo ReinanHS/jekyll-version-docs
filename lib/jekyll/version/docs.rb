@@ -11,3 +11,4 @@ end
 
 require "jekyll/version/commands/vdoc"
 require "jekyll/version/build/build-doc"
+require "jekyll/version/tags/render-last-version"

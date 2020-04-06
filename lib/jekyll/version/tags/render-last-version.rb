@@ -14,6 +14,8 @@ module Jekyll
 
   class RenderVersions < Liquid::Tag
 
+    include Jekyll::Filters::URLFilters
+
     def initialize(tag_name, text, tokens)
       super
       path = "#{Dir.pwd}/_docs/*"
@@ -24,7 +26,7 @@ module Jekyll
       list = ''
       @versions.each do |filename|
         version = filename.to_s.split("/").last()
-        list = list + '<a class="dropdown-item" href="'+"./#{version}"+'">'+"#{version}"+'</a>'
+        list = list + '<a class="dropdown-item" href="'+version+'">'+"#{version}"+'</a>'
       end
 
       return list

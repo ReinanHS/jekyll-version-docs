@@ -50,7 +50,7 @@ module Jekyll
         summary_json.content = summaryList.to_json
         site.pages << summary_json
         
-        page = Jekyll::PageBuildDocs.new(site, site.source, "/docs/#{version}/", "#{summaryList[0].values[0]}.md", version)
+        page = Jekyll::PageBuildDocs.new(site, site.source, "/docs/#{version}/", "#{summaryList[0].values[1]}.md", version)
         page.data["sitemap"] = false
         site.pages << page
       end
